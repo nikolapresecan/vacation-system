@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ApprovalStatus{% endblock %}
+
+{% block body %}
+    <h1>Create new ApprovalStatus</h1>
+
+    {{ include('approval_status/_form.html.twig') }}
+
+    <a href="{{ path('app_approval_status_index') }}">back to list</a>
+{% endblock %}

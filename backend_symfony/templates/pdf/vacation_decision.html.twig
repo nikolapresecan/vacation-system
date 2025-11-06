@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rješenje o godišnjem odmoru</title>
+  <style>
+    @page { margin: 25mm 25mm; }
+    body { font-family: "DejaVu Serif", serif; font-size: 12pt; color:#111; line-height: 1.6; }
+    h1 { text-align:center; font-size: 16pt; margin-bottom: 15mm; text-transform: uppercase; }
+    .meta { text-align:right; font-size: 11pt; margin-bottom: 20mm; }
+    .content { margin-top: 10mm; }
+    .paragraph { margin: 8mm 0; text-align: justify; }
+    .footer { margin-top: 30mm; width: 100%; }
+    .footer .left { float: left; font-size: 12pt; }
+    .footer .right { float: right; text-align: right; font-size: 12pt; }
+    .clearfix { clear: both; }
+  </style>
+</head>
+<body>
+  <h1>RJEŠENJE O KORIŠTENJU GODIŠNJEG ODMORA</h1>
+
+  <div class="meta">
+    Broj rješenja: {{ documentNumber }}<br>
+    Datum izdavanja: {{ issuedAt|date('d.m.Y.') }}
+  </div>
+
+  <div class="content">
+    <p class="paragraph">
+      Na temelju Zakona o radu (NN 93/14, 127/17, 98/19, 151/22) i Pravilnika o radu poslodavca,
+      ovim se <strong>odobrava korištenje godišnjeg odmora</strong>
+      zaposleniku <strong>{{ fullName }}</strong> (OIB: {{ oib }}).
+    </p>
+
+    <p class="paragraph">
+      Zaposlenik ima pravo koristiti {{ days }} {{ days == 1 ? 'dan' : 'dana' }} godišnjeg odmora
+      u razdoblju od <strong>{{ start|date('d.m.Y.') }}</strong> do
+      <strong>{{ end|date('d.m.Y.') }}</strong>
+    </p>
+
+    <p class="paragraph">
+      Ovo rješenje izdaje se u skladu sa zakonskim propisima i stupa na snagu danom izdavanja.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left">U Virovitici, {{ issuedAt|date('d.m.Y.') }}</div>
+    {% if projectManagerName %}
+      <div class="right">
+        Voditelj projekta<br>
+        {{ projectManagerName }}
+      </div>
+    {% endif %}
+    <div class="clearfix"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ApprovalStatus{% endblock %}
+
+{% block body %}
+    <h1>ApprovalStatus</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ approval_status.id }}</td>
+            </tr>
+            <tr>
+                <th>TeamLeaderApprovalDate</th>
+                <td>{{ approval_status.teamLeaderApprovalDate ? approval_status.teamLeaderApprovalDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ProjectManagerApprovalDate</th>
+                <td>{{ approval_status.projectManagerApprovalDate ? approval_status.projectManagerApprovalDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>TeamLeaderComment</th>
+                <td>{{ approval_status.teamLeaderComment }}</td>
+            </tr>
+            <tr>
+                <th>ProjectManagerComment</th>
+                <td>{{ approval_status.projectManagerComment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_approval_status_index') }}">back to list</a>
+
+    <a href="{{ path('app_approval_status_edit', {'id': approval_status.id}) }}">edit</a>
+
+    {{ include('approval_status/_delete_form.html.twig') }}
+{% endblock %}
