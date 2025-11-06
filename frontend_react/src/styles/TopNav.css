@@ -1,0 +1,41 @@
+.custom-topnav {
+  background: linear-gradient(to right, rgba(0, 119, 182, 0.9), rgba(144, 224, 239, 0.8));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1020;
+  height: 56px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffe57f !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffd166 !important;
+  border-bottom: 2px solid #ffd166;
+}
+
+.team-switch-select {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  min-width: 160px;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.team-switch-select option {
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: #000000;
+}

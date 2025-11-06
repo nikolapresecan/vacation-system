@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sustav_go
+      MYSQL_USER: user123
+      MYSQL_PASSWORD: user_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app_network
+
+  backend:
+    build:
+      context: ./backend_symfony
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend_symfony:/var/www/html
+    environment:
+      - DATABASE_URL=mysql://user123:user_password@mysql:3306/sustav_go
+      - MAILER_DSN=smtp://email:pass@smtp.gmail.com:587?encryption=tls&auth_mode=login
+      - FRONTEND_URL=http://localhost:5173
+    depends_on:
+      - mysql
+    networks:
+      - app_network
+
+  messenger_worker:
+    build:
+      context: ./backend_symfony
+      dockerfile: Dockerfile.backend
+    volumes:
+      - ./backend_symfony:/var/www/html
+    depends_on:
+      - backend
+      - mysql
+    command: php bin/console messenger:consume async --time-limit=3600 --memory-limit=128M --no-interaction
+    environment:
+      - DATABASE_URL=mysql://user123:user_password@mysql:3306/sustav_go
+      - MAILER_DSN=smtp://email:pass@smtp.gmail.com:587?encryption=tls&auth_mode=login
+      - FRONTEND_URL=http://localhost:5173
+    restart: always
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./frontend_react
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend_react:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    command: npm run dev -- --host
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+volumes:
+  mysql_data:
+
+networks:
+  app_network:
+    driver: bridge

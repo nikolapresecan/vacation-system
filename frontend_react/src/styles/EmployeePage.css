@@ -1,0 +1,59 @@
+.employee-page h1 {
+  color: #023e8a;
+  font-size: 1.75rem;
+}
+
+.vacation-requests-table thead {
+  background: linear-gradient(to right, #ade8f4, #caf0f8);
+  color: #003049;
+  font-weight: bold;
+  border-bottom: 2px solid #0077b6;
+}
+
+.vacation-requests-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.vacation-requests-table tbody tr:hover {
+  background-color: #fff3cd;
+}
+
+.vacation-requests-table td,
+.vacation-requests-table th {
+  vertical-align: middle;
+  padding: 12px;
+}
+
+.vacation-requests-table .badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.btn-warning {
+  background: #ffd166;
+  border: none;
+  color: #000;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background: #e0b54d;
+  color: #000;
+}
+
+.rdrDayPassive {
+  visibility: hidden;
+}
+
+.filter-chip {
+  border-radius: 200px; 
+  margin: 8px;
+  font-size: 0.8rem;      
+  padding: 0px 10px; 
+  line-height: 1.5;
+}
+
+.filter-chip.active {
+  color: #fff !important;
+}

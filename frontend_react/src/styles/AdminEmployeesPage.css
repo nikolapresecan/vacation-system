@@ -1,0 +1,41 @@
+.employee-table thead {
+  background: linear-gradient(to right, #90e0ef, #caf0f8);
+  color: #003049;
+  font-weight: bold;
+  border-bottom: 2px solid #0077b6;
+}
+
+.employee-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #fff3cd; 
+}
+
+.employee-table td,
+.employee-table th {
+  vertical-align: middle;
+  padding: 12px;
+}
+
+.employee-table a {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.employee-table a:hover {
+  text-decoration: underline;
+}
+
+.btn-warning {
+  background: #ffd166;
+  border: none;
+  color: #000;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background: #e0b54d;
+  color: #000;
+}

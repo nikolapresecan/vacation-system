@@ -1,0 +1,110 @@
+.navsidebar-container {
+  position: fixed;
+  top: 56px; 
+  left: 0;
+  width: 260px;
+  height: calc(100vh - 56px); 
+  background: linear-gradient(to bottom right, #0077b6, #90e0ef, #caf0f8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1040;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+.navsidebar-container::-webkit-scrollbar {
+  width: 6px;
+}
+.navsidebar-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+}
+
+.navsidebar-toggle {
+  position: fixed;
+  top: 64px;
+  left: 14px;
+  z-index: 1100;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.navsidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navsidebar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navsidebar-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navsidebar-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.navsidebar-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.navsidebar-fullname {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.navsidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.navsidebar-link {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.navsidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.navsidebar-logout {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.navsidebar-logout:hover {
+  background-color: rgba(255, 0, 0, 0.4);
+}

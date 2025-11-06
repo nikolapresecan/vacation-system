@@ -1,0 +1,60 @@
+.vacation-table thead {
+  background: linear-gradient(to right, #ade8f4, #caf0f8);
+  color: #03045e;
+  font-weight: 600;
+}
+
+.vacation-table td, .vacation-table th {
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.vacation-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tvcal {
+  border-radius: 1rem;
+}
+
+.tvcal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: .35rem;
+}
+
+.tvcal-header > div {
+  padding: .25rem .35rem;
+}
+
+.tvcal-cell {
+  height: 50px;              
+  border: 1px solid #eee;
+  border-radius: .75rem;
+  padding: .35rem .45rem;
+  transition: box-shadow .15s ease, transform .05s ease;
+  overflow: hidden;
+}
+
+.tvcal-cell:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.tvcal-today {
+  outline: 2px solid rgba(25,135,84,.35); 
+}
+
+.tvcal-active {
+  outline: 2px solid rgba(13,110,253,.5);
+}
+
+.tvcal-date {
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.tvcal-pill {
+  font-size: .7rem;
+  border-radius: 999px;
+}
